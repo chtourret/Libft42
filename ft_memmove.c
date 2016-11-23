@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctourret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 10:52:04 by ctourret          #+#    #+#             */
-/*   Updated: 2016/11/15 05:50:13 by ctourret         ###   ########.fr       */
+/*   Created: 2016/11/11 15:59:57 by ctourret          #+#    #+#             */
+/*   Updated: 2016/11/11 16:44:31 by ctourret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	else
+	unsigned char *tmp_d;
+	unsigned char *tmp_s;
+
+	tmp_d = (unsigned char *)dst;
+	tmp_s = (unsigned char *)src;
+	if (tmp_d == tmp_s)
+		return (dst);
+	else if (tmp_s < tmp_d)
 	{
-		if (n < 0)
+		tmp_s = tmp_s + len - 1;
+		tmp_d = tmp_d + len - 1;
+		while (len > 0)
 		{
-			ft_putchar('-');
-			n *= -1;
+			*tmp_d-- = *tmp_s--;
+			len--;
 		}
-		if (n > 9)
-		{
-			ft_putnbr(n / 10);
-			ft_putnbr(n % 10);
-		}
-		else
-			ft_putchar(n + '0');
+		return (dst);
 	}
+	else
+		while (len > 0)
+		{
+			*tmp_d++ = *tmp_s++;
+			len--;
+		}
+	return (dst);
 }

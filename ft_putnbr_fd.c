@@ -6,7 +6,7 @@
 /*   By: ctourret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 15:07:16 by ctourret          #+#    #+#             */
-/*   Updated: 2016/11/08 18:31:08 by ctourret         ###   ########.fr       */
+/*   Updated: 2016/11/15 00:44:59 by ctourret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 		ft_putstr_fd("-2147483648", fd);
-	if (n == 0)
-		return ;
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);

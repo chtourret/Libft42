@@ -6,7 +6,7 @@
 /*   By: ctourret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 16:07:56 by ctourret          #+#    #+#             */
-/*   Updated: 2016/11/10 16:42:53 by ctourret         ###   ########.fr       */
+/*   Updated: 2016/11/14 13:29:42 by ctourret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_memdel(void **ap)
 {
-	if (ap && *ap)
+	if (!ap || !*ap)
+		return ;
+	else
 	{
 		free(*ap);
 		*ap = NULL;

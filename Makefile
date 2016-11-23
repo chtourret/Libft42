@@ -6,7 +6,7 @@
 #    By: ctourret <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 17:23:18 by ctourret          #+#    #+#              #
-#    Updated: 2016/11/10 19:00:06 by ctourret         ###   ########.fr        #
+#    Updated: 2016/11/15 06:50:18 by ctourret         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,15 @@ SRC = ft_atoi.c			\
 	  ft_memdel.c		\
 	  ft_strnew.c		\
 	  ft_strdel.c		\
-	  ft_strtrim.c
+	  ft_strtrim.c		\
+	  ft_strmap.c		\
+	  ft_strmapi.c		\
+	  ft_strsub.c		\
+	  ft_strjoin.c		\
+	  ft_memmove.c		\
+	  ft_itoa.c			\
+	  ft_strsplit.c		\
+	  ft_strlcat.c
 
 OBJ = ft_atoi.o			\
 	  ft_isalnum.o		\
@@ -100,7 +108,15 @@ OBJ = ft_atoi.o			\
 	  ft_memdel.o		\
 	  ft_strnew.o		\
 	  ft_strdel.o		\
-	  ft_strtrim.o
+	  ft_strtrim.o		\
+	  ft_strmap.o		\
+	  ft_strmapi.o		\
+	  ft_strsub.o		\
+	  ft_strjoin.o		\
+	  ft_memmove.o		\
+	  ft_itoa.o			\
+	  ft_strsplit.o		\
+	  ft_strlcat.o
 
 INCLUDE = -Ilibft
 
@@ -119,3 +135,5 @@ fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
+
+.PHONY : clean fclean re
